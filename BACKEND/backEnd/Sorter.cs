@@ -4,14 +4,17 @@ namespace backEnd
 {
 	public class Sorter
 	{
-		private int attr_sortingStrategy;
+		public SortingStrategy sortingStrategy { get; set;}
 
 		public Sorter ()
 		{
 		}
 
-		public int Sort(DataSet dataset, int beginIndex, int endIndex) {
-			return 0;
+
+		public Probe Sort(DataSet dataset, int beginIndex, int endIndex) {
+	
+			this.sortingStrategy.initialize (dataset, beginIndex, endIndex);
+			return this.sortingStrategy.doAlgorithm ();
 		}
 
 	}

@@ -10,10 +10,28 @@ namespace backEnd
 			private set;
 		}
 
+		public int size {
+			get { return data.Length;}
+			private set{ }
+		}
+
+		public int this [int index] {
+			get { return data[index];}
+			set { data[index] = value;}
+		}
+
+
 		public DataSet (int size, InitialSort initialSort)
 		{
 			this.probe = new Probe ();
 			this.data = DataFactory.build(size, initialSort);
+		}
+
+
+		private DataSet (int size)
+		{
+			this.probe = new Probe ();
+			this.data = new int[size]; 
 		}
 
 		public override string ToString() {
@@ -25,19 +43,20 @@ namespace backEnd
 			 return ret; 
 		}
 
-		private void exchange(int n1, int n2) {
+		public void exchange(int n1, int n2) {
 			probe.incrNbExchanges();
 			int tmp = this.copy(n1); 
-			data [n1] = data [n2];
+			data [n1] = this.copy(n2);
 			data [n2] = tmp;
+			probe.incrNbCopies ();
 		}
 
-		private int copy(int itemIndex) {
+		public int copy(int itemIndex) {
 			probe.incrNbCopies();
 			return data[itemIndex];
 		}
 
-		private int compare(int n1, int n2) {
+		public int compare(int n1, int n2) {
 			probe.incrNbComparisons();
 			if (data [n1] == data [n2]) {
 				return 0;
@@ -50,6 +69,16 @@ namespace backEnd
 
 		public void resetProbe() {
 			probe.reset();
+		}
+
+		public DataSet getSubDataSet(int beginIndex, int endIndex) {
+			DataSet retDataSet = new DataSet (endIndex-beginIndex);
+
+			for (int i = beginIndex; i < endIndex; ++i) {
+				retDataSet.data [i] = this.data [i];
+			}
+
+			return retDataSet;
 		}
 			
 	}

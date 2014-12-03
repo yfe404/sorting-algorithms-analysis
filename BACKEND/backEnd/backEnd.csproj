@@ -40,6 +40,8 @@
     <Compile Include="InitialSort.cs" />
     <Compile Include="Probe.cs" />
     <Compile Include="Sorter.cs" />
+    <Compile Include="SortingStrategy.cs" />
+    <Compile Include="BubbleSort.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
