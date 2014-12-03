@@ -13,13 +13,7 @@ namespace GUI
 
 		public Application ()
 		{
-			Gtk.Window window = new Gtk.Window ("Comparaison algorithmes");
-			window.SetSizeRequest (500,200);
-
-			Gtk.VPaned vpane = new Gtk.VPaned ();
-			window.Add (vpane);
-
-			window.ShowAll ();
+			new MainWindow ();
 		}
 	}
 }
