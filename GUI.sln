@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "SIT152_TP2\GUI.csproj", "{D019397C-7DEF-4956-9459-A93CECAAC666}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{D019397C-7DEF-4956-9459-A93CECAAC666}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,6 @@ Global
 		{D019397C-7DEF-4956-9459-A93CECAAC666}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = SIT152_TP2\GUI.csproj
+		StartupItem = GUI\GUI.csproj
 	EndGlobalSection
 EndGlobal

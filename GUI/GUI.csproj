@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{D019397C-7DEF-4956-9459-A93CECAAC666}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SIT152_TP2</RootNamespace>
-    <AssemblyName>SIT152_TP2</AssemblyName>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
