@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIT152_TP2
+namespace GUI
 {
 	public class Application
 	{
