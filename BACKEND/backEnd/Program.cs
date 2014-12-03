@@ -9,17 +9,13 @@ namespace backEnd
 			Probe p;
 
 			Sorter sorter = new Sorter ();
-			sorter.sortingStrategy = new BubbleSort ();
+			sorter.sortingStrategy = new BubbleSortOptimized ();
+			DataSet data = new DataSet (100, InitialSort.SORTED);
 
-			DataSet data = new DataSet (10, InitialSort.RANDOM);
-
-			p = sorter.Sort (data, 0, 3);
-
-			Console.WriteLine ("Test => Attempting to generate and output 10 random values between 1 and 1O");
+			p = sorter.Sort (data, 0, 100);
 
 			Console.WriteLine (p);
 
-			Console.WriteLine ("Test => DONE");
 		}
 	}
 }

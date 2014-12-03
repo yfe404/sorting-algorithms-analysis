@@ -21,6 +21,7 @@ namespace backEnd
 				}
 			}
 
+			Console.WriteLine ("BubbleSort result :");
 			Console.Write (data);
 			return data.probe;
 
