@@ -9,21 +9,25 @@ namespace GUI.Models
 		public bool Visible;
 
 		[Gtk.TreeNodeValue (Column = 1)]
-		public string Name;
+		public string Algorithm;
 
 		[Gtk.TreeNodeValue (Column = 2)]
-		public int Comparisons;
+		public string Dataset;
 
 		[Gtk.TreeNodeValue (Column = 3)]
-		public int Exchanges;
+		public int Comparisons;
 
 		[Gtk.TreeNodeValue (Column = 4)]
+		public int Exchanges;
+
+		[Gtk.TreeNodeValue (Column = 5)]
 		public int Copies;
 
-		public ResultsTreeNode (string name, int comparisons, int exchanges, int copies)
+		public ResultsTreeNode (string algorithm, string dataset, int comparisons, int exchanges, int copies)
 		{
 			Visible = true;
-			Name = name;
+			Algorithm = algorithm;
+			Dataset = dataset;
 			Comparisons = comparisons;
 			Exchanges = exchanges;
 			Copies = copies;
