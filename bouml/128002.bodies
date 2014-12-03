@@ -1,0 +1,6 @@
+class SortingStrategy
+!!!128514.java!!!	exchange(in n1 : int, in n2 : int) : void
+int tmp; 
+tmp = dataSet[n1];
+dataSet[n1] = dataSet[n2]
+dataSet[n2] = tmp; 

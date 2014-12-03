@@ -1,0 +1,473 @@
+format 207
+"SortingStrategies" // SortingStrategies
+  revision 1
+  modified_by 2 "yafeunteun"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 128002 "strategies"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 128002 "strategies"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 128002 "SortingStrategy"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128130 "doAlgorithm"
+	public explicit_return_type "Probe"
+	multiplicity "1"
+	nparams 2
+	  param in name "beginIndex" explicit_type "int"
+	multiplicity "1"
+	  param in name "endIndex" explicit_type "int"
+	multiplicity "1"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Trie les données d'un DataSet entre l'indice beginIndex et endIndex.
+Renvoie un objet de type Probe qui contient les statistiques du traitement i.e. le nombre de comparaisons, échanges, copies.
+
+"
+      end
+
+      operation 128258 "compare"
+	private explicit_return_type "int"
+	multiplicity "1"
+	nparams 2
+	  param in name "n1" explicit_type "int"
+	  param in name "n2" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Incrémente le champ n_comparisons de 1 et compare les éléments situés à l'indice n1 et n2 entre eux.
+Valeur de retour : voir DataSet.compare"
+      end
+
+      operation 128386 "copy"
+	private explicit_return_type "int"
+	multiplicity "1"
+	nparams 1
+	  param in name "n1" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Incrémente le champ n_copies de 1 et retourne l' élément situé à l'indice n1;
+Valeur de retour : voir DataSet.copy"
+      end
+
+      operation 128514 "exchange"
+	private explicit_return_type "void"
+	nparams 2
+	  param in name "n1" explicit_type "int"
+	  param in name "n2" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Echange l'élément d'index n1 et avec l'élément d'index n2"
+      end
+
+      attribute 128642 "dataset"
+	private type class_ref 129410 // DataSet
+	multiplicity "1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 128130 "BubbleSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128258 // <generalisation>
+	relation 128258 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128258 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 128258 "MergeSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128386 // <generalisation>
+	relation 128386 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128386 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 128386 "QuickSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128514 // <generalisation>
+	relation 128514 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128514 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 128642 "BoolBubbleSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128130 // <generalisation>
+	relation 128130 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128130 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 128770 "InsertionSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128770 // <generalisation>
+	relation 128770 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128770 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 128898 "SelectionSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128642 // <generalisation>
+	relation 128642 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128642 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 129026 "OptimizedBubbleSort"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128898 // <generalisation>
+	relation 128898 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128898 // <generalisation>
+	  b parent class_ref 128002 // SortingStrategy
+      end
+    end
+
+    class 129154 "Sorter"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 128002 "attr_sortingStrategy"
+	private type class_ref 128002 // SortingStrategy
+	multiplicity "1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "Stratégie de trie à utiliser ex: Tri fusion, tri bulle, ..."
+      end
+
+      operation 128642 "Sort"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129282 "Probe"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 128130 "attr_n_comparisons"
+	private explicit_type "int"
+	init_value "0"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128258 "attr_n_exchanges"
+	private explicit_type "int"
+	multiplicity "1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128386 "attr_n_copies"
+	private explicit_type "int"
+	multiplicity "1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 129410 "DataSet"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 128514 "data"
+	private explicit_type "int"
+	multiplicity "1..*"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}${type} [] ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 128770 "copy"
+	private explicit_return_type "int"
+	multiplicity "1"
+	nparams 1
+	  param in name "indexItem" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Retourne l'entier situé à l'index indexItem dans DataSet."
+      end
+
+      operation 128898 "compare"
+	private explicit_return_type "int"
+	multiplicity "1"
+	nparams 2
+	  param in name "n1" explicit_type "int"
+	  param in name "n2" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Compare l'élément à l'indice n1 avec l'élément à l'indice n2. 
+Retourne 1 si l'élément à l'indice n1 est supérieur à l'élément à l'indice n2, 0 s'ils sont égaux et -1 si l'élément à l'indice n1 est inférieur à l'élément situé à l'indice n2.
+
+"
+      end
+
+      operation 129026 "exchange"
+	private explicit_return_type "void"
+	nparams 2
+	  param in name "n1" explicit_type "int"
+	  param in name "n2" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Echange l'élément d'index n1 et avec l'élément d'index n2"
+      end
+
+      operation 129154 "getSubDataSet"
+	public return_type class_ref 129410 // DataSet
+	nparams 2
+	  param in name "beginIndex" explicit_type "int"
+	  param in name "endIndex" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Retourne un DataSet qui est un sous-DataSet de l'instance et qui contient les données entre beginIndex inclus et endIndex non inclus."
+      end
+    end
+  end
+end

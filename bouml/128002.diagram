@@ -1,0 +1,24 @@
+format 207
+
+classcanvas 128002 class_ref 128002 // SortingStrategy
+  classdiagramsettings member_max_width 0 end
+  xyz 331 334 2000
+end
+classcanvas 130306 class_ref 129154 // Sorter
+  classdiagramsettings member_max_width 0 end
+  xyzwh 305 76 2000 119 103
+end
+classcanvas 130562 class_ref 129282 // Probe
+  classdiagramsettings member_max_width 0 end
+  xyz 151 232 2000
+end
+classcanvas 130690 class_ref 129410 // DataSet
+  classdiagramsettings member_max_width 0 end
+  xyzwh 512 202 2000 161 83
+end
+note 130818 "Devra implémenter un indexer pour accéder au tableau de données
+"
+  xyzwh 633 91 2000 173 55
+line 130946 -_-_
+  from ref 130690 z 2001 to ref 130818
+end
