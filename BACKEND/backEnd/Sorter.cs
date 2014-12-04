@@ -12,9 +12,8 @@ namespace backEnd
 
 
 		public Probe Sort(DataSet dataset, int beginIndex, int endIndex) {
-	
-			this.sortingStrategy.initialize (dataset, beginIndex, endIndex);
-			return this.sortingStrategy.doAlgorithm ();
+
+			return this.sortingStrategy.doAlgorithm (dataset, beginIndex, endIndex);
 		}
 
 	}
