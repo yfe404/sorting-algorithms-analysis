@@ -7,9 +7,6 @@ namespace algorithms
 	{
 		public BubbleSortBool () : base() {}
 
-		bool initialized = false;
-		int call = 0;
-
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{
 
