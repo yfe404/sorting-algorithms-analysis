@@ -9,10 +9,10 @@ namespace backEnd
 			Probe p;
 
 			Sorter sorter = new Sorter ();
-			sorter.sortingStrategy = new BubbleSortBool ();
-			DataSet data = new DataSet (10, InitialSort.SORTED);
+			sorter.sortingStrategy = new InsertionSort ();
+			DataSet data = new DataSet (1000000, InitialSort.RANDOM);
 
-			p = sorter.Sort (data, 3, 10);
+			p = sorter.Sort (data, 999, 1000);
 
 			Console.WriteLine (p);
 
