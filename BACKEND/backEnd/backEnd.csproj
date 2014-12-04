@@ -49,4 +49,7 @@
     <Compile Include="InsertionSort.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="fic0.txt" />
+  </ItemGroup>
 </Project>

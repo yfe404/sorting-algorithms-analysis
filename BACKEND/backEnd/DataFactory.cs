@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace backEnd
 {
@@ -34,16 +35,40 @@ namespace backEnd
 
 
 
-		/*
+		// reader.ReadLine();
 		public static int[] build(string pathname) {
 
-			int [] t = new int [n];
+			int[] t = null;
+			int cpt = 0; 
+			int i = 0;
+			StreamReader reader = null; // In System.IO namespace try
 
-			// Fill t from the file located at pathname
+			try {
+				reader = File.OpenText (pathname); 
+
+				while(!reader.EndOfStream) {
+					reader.ReadLine();
+					++cpt;
+				}
+
+				t = new int[cpt];
+				reader.Close();
+				reader = File.OpenText (pathname); 
+
+				while(!reader.EndOfStream) {
+					string tmp = reader.ReadLine();
+					if(!Int32.TryParse(tmp, out t[i++])) {
+						Console.WriteLine("Error, NAN read in the file : " + pathname);
+						return null; // change this line by exit 
+					}
+				}
+			} finally {
+				if (reader != null) reader.Dispose(); 
+			}
 
 			return t;
 		}
-	*/
+	
 
 
 
@@ -60,6 +85,10 @@ namespace backEnd
 				array[i - 1] = tmp;
 			}
 		}
+
+	
+
+	
 
 	}
 
