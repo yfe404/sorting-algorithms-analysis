@@ -1,7 +1,7 @@
 ﻿using System;
-using backEnd;
+using GUI.Models;
 
-namespace algorithms
+namespace GUI.Algorithms
 {
 	public class QuickSort : SortingStrategy
 	{

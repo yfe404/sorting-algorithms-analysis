@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace backEnd
+namespace GUI
 {
 	public enum InitialSort
 	{

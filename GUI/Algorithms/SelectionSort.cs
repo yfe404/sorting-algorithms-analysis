@@ -1,18 +1,16 @@
 ﻿using System;
-using backEnd;
+using GUI.Models;
 
-namespace algorithms
+namespace GUI.Algorithms
 {
-	public class BubbleSort : SortingStrategy
+	public class SelectionSort : SortingStrategy
 	{
-		public BubbleSort () : base() {}
+		public SelectionSort () : base() {}
 
-
-
+	
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{
-		
-			/* Initialization Block */
+
 			if(!initialized) {
 				data = dataset.getSubDataSet (beginIndex, endIndex);
 				beginIndex -= beginIndex;
@@ -21,23 +19,39 @@ namespace algorithms
 			}
 			++call; 
 
-			int data_size = data.size-1;
-			for(int i = 0; i < data_size; ++i)
-			{
-				for(int j = 0; j < data_size; ++j)
-				{
 
-					if(data.compare(j, j+1) > 0) {
-						data.exchange (j, j + 1);
-							
+
+
+
+			int data_size = data.size;
+			int max = 0;
+			int tmp = data_size;
+			int i,j;
+
+			for(i = 0; i < data_size; ++i)
+			{
+				for(j = 0; j < tmp; ++j)
+				{
+					if(data.compare(j, max) > 0) {
+						max = j;
+						data.copy(0); 
 					}
 				}
+				data.exchange(max, tmp-1);
+				--tmp;
+				max = 0;
+
 			}
+
+
+
+
+
 
 			--call; 
 			if (call == 0) {
 				initialized = false;
-				Console.WriteLine ("BubbleSort result :");
+				Console.WriteLine ("Selection Sort result :");
 				Console.Write (data);
 				return data.probe;
 			} else {
@@ -47,6 +61,9 @@ namespace algorithms
 		} /* public override Probe doAlgorithm () */
 	} /* public class BubbleSort : SortingStrategy */ 
 } /* namespace backEnd */
+
+
+
 
 
 

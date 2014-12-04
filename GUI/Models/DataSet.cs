@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace backEnd
+namespace GUI.Models
 {
 	public class DataSet
 	{
