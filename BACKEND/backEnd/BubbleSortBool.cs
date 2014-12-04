@@ -1,13 +1,11 @@
 ﻿using System;
+using backEnd;
 
-namespace backEnd
+namespace algorithms
 {
 	public class BubbleSortBool : SortingStrategy
 	{
 		public BubbleSortBool () : base() {}
-
-		bool initialized = false;
-		int call = 0;
 
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{

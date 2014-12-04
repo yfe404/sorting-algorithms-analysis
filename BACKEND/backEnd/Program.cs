@@ -1,4 +1,5 @@
 ﻿using System;
+using algorithms;
 
 namespace backEnd
 {
@@ -9,10 +10,15 @@ namespace backEnd
 			Probe p;
 
 			Sorter sorter = new Sorter ();
-			sorter.sortingStrategy = new SelectionSort ();
-			DataSet data = new DataSet (1000000, InitialSort.REVERSE);
+			sorter.sortingStrategy = new BubbleSort ();
+			//DataSet data = new DataSet (1000000, InitialSort.REVERSE);
 
-			p = sorter.Sort (data, 0, 10);
+			DataSet testDataSetFile = new DataSet ("/Users/yafeunteun/Documents/Projets/backEnd/backEnd/fic0.txt");
+			if (testDataSetFile != null) {
+				//Console.Write (testDataSetFile);
+			}
+
+			p = sorter.Sort (testDataSetFile, 0, testDataSetFile.size);
 
 			Console.WriteLine (p);
 

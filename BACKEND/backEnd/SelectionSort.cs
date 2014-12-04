@@ -1,13 +1,13 @@
 ﻿using System;
-namespace backEnd
+using backEnd;
+
+namespace algorithms
 {
 	public class SelectionSort : SortingStrategy
 	{
 		public SelectionSort () : base() {}
 
-		bool initialized = false;
-		int call = 0;
-
+	
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{
 

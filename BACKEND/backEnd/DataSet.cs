@@ -30,6 +30,12 @@ namespace backEnd
 			this.data = DataFactory.build(size, initialSort);
 		}
 
+		public DataSet (string pathname)
+		{
+			this.probe = new Probe ();
+			this.data = DataFactory.build (pathname);
+		}
+
 
 		private DataSet (int size)
 		{

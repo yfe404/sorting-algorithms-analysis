@@ -1,14 +1,12 @@
 ﻿using System;
+using backEnd;
 
-namespace backEnd
+namespace algorithms
 {
 	public class QuickSort : SortingStrategy
 	{
 		public QuickSort () : base() {}
 
-
-		bool initialized = false;
-		int call = 0;
 
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{
