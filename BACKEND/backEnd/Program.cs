@@ -1,4 +1,5 @@
 ﻿using System;
+using algorithms;
 
 namespace backEnd
 {
@@ -9,7 +10,7 @@ namespace backEnd
 			Probe p;
 
 			Sorter sorter = new Sorter ();
-			sorter.sortingStrategy = new QuickSort ();
+			sorter.sortingStrategy = new BubbleSort ();
 			//DataSet data = new DataSet (1000000, InitialSort.REVERSE);
 
 			DataSet testDataSetFile = new DataSet ("/Users/yafeunteun/Documents/Projets/backEnd/backEnd/fic0.txt");

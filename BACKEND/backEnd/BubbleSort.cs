@@ -1,17 +1,18 @@
 ﻿using System;
+using backEnd;
 
-namespace backEnd
+namespace algorithms
 {
 	public class BubbleSort : SortingStrategy
 	{
 		public BubbleSort () : base() {}
 
-		bool initialized = false;
-		int call = 0;
+
 
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{
 		
+			/* Initialization Block */
 			if(!initialized) {
 				data = dataset.getSubDataSet (beginIndex, endIndex);
 				beginIndex -= beginIndex;

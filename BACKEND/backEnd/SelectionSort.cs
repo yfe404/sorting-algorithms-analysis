@@ -1,5 +1,7 @@
 ﻿using System;
-namespace backEnd
+using backEnd;
+
+namespace algorithms
 {
 	public class SelectionSort : SortingStrategy
 	{

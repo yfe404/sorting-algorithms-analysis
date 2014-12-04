@@ -1,6 +1,7 @@
 ﻿using System;
+using backEnd;
 
-namespace backEnd
+namespace algorithms
 {
 	public class BubbleSortOptimized : SortingStrategy
 	{
