@@ -27,6 +27,22 @@ namespace GUI
 
 			resultsTreeView.NodeSelection.Changed += resultsTreeViewSelectionChanged;
 
+			var probe1 = new Models.Probe ();
+			probe1.nbComparisons = 100;
+
+			var probe2 = new Models.Probe ();
+			probe2.nbComparisons = 50;
+
+			var probe3 = new Models.Probe ();
+			probe2.nbComparisons = 150;
+
+			var result = new Models.Result ("Tri bulle");
+			result.AddProbe (1, probe1);
+			result.AddProbe (10, probe2);
+			result.AddProbe (12, probe3);
+
+			plotView.PlotResult (result);
+
 			ShowAll ();
 		}
 
@@ -38,22 +54,6 @@ namespace GUI
 				var node = (Models.ResultsTreeNode)selection.SelectedNode;
 			}
 		}
-
-//		var model = new OxyPlot.PlotModel ();
-//		model.Series.Add (new OxyPlot.Series.FunctionSeries (Math.Exp, 0, 2, 0.1, "BogoSort"));
-//		model.Series.Add (new OxyPlot.Series.FunctionSeries (Math.Log, 0, 2, 0.1, "BubbleSort"));
-//		var a = new OxyPlot.Series.LineSeries ();
-//		a.Points.Add (new OxyPlot.DataPoint (1, 3));
-//		a.Points.Add (new OxyPlot.DataPoint (0, 1));
-//		model.Series.Add (a);
-//
-//		plotView.Model = model;
-//
-//		var store = new Gtk.NodeStore (typeof(Models.ResultsTreeNode));
-//		store.AddNode (new Models.ResultsTreeNode ("BogoSort", "O(N)", 10, 20, 30));
-//		store.AddNode (new Models.ResultsTreeNode ("BubbleSort", "O(N)", 10, 20, 30));
-//		resultsTreeView.NodeStore = store;
-//
 	}
 }
 
