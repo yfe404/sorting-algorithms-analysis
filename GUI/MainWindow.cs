@@ -4,45 +4,28 @@ namespace GUI
 {
 	public class MainWindow : Gtk.Window
 	{
-		public MainWindow () : base ("Window")
-		{
-			SetSizeRequest (600, 400);
-			Title = "Resultats";
+		const int WIDTH = 800;
+		const int HEIGHT = 530;
 
-			var table = new Gtk.Table (20, 2, false);
+		public MainWindow () : base ("Resultats")
+		{
+			SetSizeRequest (WIDTH, HEIGHT);
+			Resizable = false;
+			ModifyBg (Gtk.StateType.Normal, new Gdk.Color (255, 255, 255));
+
+			var table = new Gtk.Table (10, 10, true);
 			Add (table);
 
-			var toolbar = new Gtk.Toolbar ();
-			toolbar.SetSizeRequest (600, 20);
-			table.Attach (toolbar, 0, 2, 0, 1);
+			var plotView = new Views.ResultsPlotView ();
+			table.Attach (plotView, 0, 10, 0, 7);
 
-			var showDatasetsWindowButton = new Gtk.ToolButton (null, "Jeux de donnees");
-			toolbar.Add (showDatasetsWindowButton);
-
-			var vpane = new Gtk.VPaned ();
-			table.Attach (vpane, 0, 2, 1, 20);
-
-			var plotView = new OxyPlot.GtkSharp.PlotView ();
-			plotView.SetSizeRequest (600, 200);
-			vpane.Add1 (plotView);
+			var datasetsView = new Views.DatasetView ();
+			table.Attach (datasetsView, 0, 2, 7, 10);
 
 			var resultsTreeView = new Views.ResultsTreeView ();
-			vpane.Add2 (resultsTreeView);
+			table.Attach (resultsTreeView, 2, 10, 7, 10);
 
 			resultsTreeView.NodeSelection.Changed += resultsTreeViewSelectionChanged;
-
-			// plotView configuration
-			var model = new OxyPlot.PlotModel();
-			//model.Series.Add (new OxyPlot.Series.FunctionSeries (Math.Exp, 0, 2, 0.1, "BogoSort"));
-			//model.Series.Add (new OxyPlot.Series.FunctionSeries (Math.Log, 0, 2, 0.1, "BubbleSort"));
-
-			plotView.Model = model;
-
-			var store = new Gtk.NodeStore (typeof(Models.ResultsTreeNode));
-			//store.AddNode (new Models.ResultsTreeNode ("BogoSort", "Random", 10, 20, 30));
-			//store.AddNode (new Models.ResultsTreeNode ("BubbleSort", "Random", 10, 20, 30));
-
-			resultsTreeView.NodeStore = store;
 
 			ShowAll ();
 		}
@@ -55,6 +38,22 @@ namespace GUI
 				var node = (Models.ResultsTreeNode)selection.SelectedNode;
 			}
 		}
+
+//		var model = new OxyPlot.PlotModel ();
+//		model.Series.Add (new OxyPlot.Series.FunctionSeries (Math.Exp, 0, 2, 0.1, "BogoSort"));
+//		model.Series.Add (new OxyPlot.Series.FunctionSeries (Math.Log, 0, 2, 0.1, "BubbleSort"));
+//		var a = new OxyPlot.Series.LineSeries ();
+//		a.Points.Add (new OxyPlot.DataPoint (1, 3));
+//		a.Points.Add (new OxyPlot.DataPoint (0, 1));
+//		model.Series.Add (a);
+//
+//		plotView.Model = model;
+//
+//		var store = new Gtk.NodeStore (typeof(Models.ResultsTreeNode));
+//		store.AddNode (new Models.ResultsTreeNode ("BogoSort", "O(N)", 10, 20, 30));
+//		store.AddNode (new Models.ResultsTreeNode ("BubbleSort", "O(N)", 10, 20, 30));
+//		resultsTreeView.NodeStore = store;
+//
 	}
 }
 

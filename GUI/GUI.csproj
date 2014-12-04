@@ -36,7 +36,8 @@
     <Compile Include="Models\ResultsTreeNode.cs" />
     <Compile Include="Views\ResultsTreeView.cs" />
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="gtk-gui\GUI.Window.cs" />
+    <Compile Include="Views\DatasetView.cs" />
+    <Compile Include="Views\ResultsPlotView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
@@ -50,6 +51,7 @@
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="Mono.Posix" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
