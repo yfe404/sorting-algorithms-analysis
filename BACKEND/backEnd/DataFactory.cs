@@ -34,6 +34,19 @@ namespace backEnd
 
 
 
+		/*
+		public static int[] build(string pathname) {
+
+			int [] t = new int [n];
+
+			// Fill t from the file located at pathname
+
+			return t;
+		}
+	*/
+
+
+
 		private static void Shuffle<T>(T[] array)
 		{
 			var random = _random;
@@ -41,7 +54,7 @@ namespace backEnd
 			{
 				// Pick random element to swap.
 				int j = random.Next(i); // 0 <= j <= i-1
-				// Swap.
+				// Swap
 				T tmp = array[j];
 				array[j] = array[i - 1];
 				array[i - 1] = tmp;

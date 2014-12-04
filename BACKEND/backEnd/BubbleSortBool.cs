@@ -2,15 +2,17 @@
 
 namespace backEnd
 {
-	public class BubbleSortOptimized : SortingStrategy
+	public class BubbleSortBool : SortingStrategy
 	{
-		public BubbleSortOptimized () : base() {}
+		public BubbleSortBool () : base() {}
 
 		bool initialized = false;
 		int call = 0;
 
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)
 		{
+
+/* ------------- Initialization (common to all algorithms) ------------------------------*/
 			if(!initialized) {
 				data = dataset.getSubDataSet (beginIndex, endIndex);
 				beginIndex -= beginIndex;
@@ -18,12 +20,9 @@ namespace backEnd
 				initialized = true;
 			}
 			++call; 
-
-			int data_size = data.size-1;
-			int tmp = data_size;
-			int posLastSwap = tmp;  /* Position du dernier échange (évite de tout reparcourir) */
+/* -------------------------------------------------------------------------------------*/
 			bool echange = false;
-
+			int data_size = data.size-1;
 			for(int i = 0; i < data_size; ++i)
 			{
 				for(int j = 0; j < data_size; ++j)
@@ -31,35 +30,29 @@ namespace backEnd
 
 					if(data.compare(j, j+1) > 0) {
 						data.exchange (j, j + 1);
-						echange = true;
-						posLastSwap = j;
+						echange=true;
 
 					}
 				}
-				tmp = posLastSwap;
 				if(echange == false)  {
-					Console.WriteLine ("BubbleSortOptimized result : ");
+					Console.WriteLine ("BubbleSortBool result : ");
 					Console.Write (data);
 					return data.probe;
 				}
 				echange = false;
 			}
-
+/* -------------------------------------------------------------------------------------*/
 			--call; 
 			if (call == 0) {
 				initialized = false;
-				Console.WriteLine ("Optimized Bubble Sort result :");
+				Console.WriteLine ("BubbleSortBool result :");
 				Console.Write (data);
 				return data.probe;
 			} else {
 				return null;
 			}
-				
+
 		} /* public override Probe doAlgorithm () */
 	} /* public class BubbleSort : SortingStrategy */ 
 } /* namespace backEnd */
-
-
-
-
 

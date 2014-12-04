@@ -6,12 +6,7 @@ namespace backEnd
 	{
 		protected DataSet data;
 
-		public void initialize(DataSet dataset, int beginIndex, int endIndex)
-		{
-			data = dataset.getSubDataSet (beginIndex, endIndex);
-		}
-
-		public abstract Probe doAlgorithm();
+		public abstract Probe doAlgorithm(DataSet dataset, int beginIndex, int endIndex);
 	}
 }
 

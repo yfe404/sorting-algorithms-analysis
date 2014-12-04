@@ -16,6 +16,9 @@ namespace backEnd
 		}
 
 		public int this [int index] {
+
+
+
 			get { return data[index];}
 			set { data[index] = value;}
 		}
@@ -53,6 +56,13 @@ namespace backEnd
 
 		public int copy(int itemIndex) {
 			probe.incrNbCopies();
+
+
+
+
+
+
+
 			return data[itemIndex];
 		}
 
@@ -67,6 +77,7 @@ namespace backEnd
 			}
 		}
 
+
 		public void resetProbe() {
 			probe.reset();
 		}
@@ -75,7 +86,7 @@ namespace backEnd
 			DataSet retDataSet = new DataSet (endIndex-beginIndex);
 
 			for (int i = beginIndex; i < endIndex; ++i) {
-				retDataSet.data [i] = this.data [i];
+				retDataSet.data [i-beginIndex] = this.data [i];
 			}
 
 			return retDataSet;
