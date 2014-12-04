@@ -12,7 +12,7 @@ namespace GUI.Models
 		public string Algorithm;
 
 		[Gtk.TreeNodeValue (Column = 2)]
-		public string Dataset;
+		public string Complexity;
 
 		[Gtk.TreeNodeValue (Column = 3)]
 		public int Comparisons;
@@ -23,11 +23,11 @@ namespace GUI.Models
 		[Gtk.TreeNodeValue (Column = 5)]
 		public int Copies;
 
-		public ResultsTreeNode (string algorithm, string dataset, int comparisons, int exchanges, int copies)
+		public ResultsTreeNode (string algorithm, string complexity, int comparisons, int exchanges, int copies)
 		{
 			Visible = true;
 			Algorithm = algorithm;
-			Dataset = dataset;
+			Complexity = complexity;
 			Comparisons = comparisons;
 			Exchanges = exchanges;
 			Copies = copies;
