@@ -9,6 +9,14 @@ namespace GUI.Algorithms
 		protected bool initialized = false;
 		protected int call = 0;
 
+		public readonly string Name;
+		public readonly Complexity AsymptoticComplexity;
+
+		public SortingStrategy(string name, Complexity asymptoticComplexity) {
+			Name = name;
+			AsymptoticComplexity = asymptoticComplexity;
+		}
+
 		public abstract Probe doAlgorithm(DataSet dataset, int beginIndex, int endIndex);
 	}
 }

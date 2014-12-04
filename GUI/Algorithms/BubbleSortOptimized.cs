@@ -5,7 +5,7 @@ namespace GUI.Algorithms
 {
 	public class BubbleSortOptimized : SortingStrategy
 	{
-		public BubbleSortOptimized () : base() {}
+		public BubbleSortOptimized () : base("Tri Bulle Optimise", Complexity.QUADRATIC) {}
 
 	
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)

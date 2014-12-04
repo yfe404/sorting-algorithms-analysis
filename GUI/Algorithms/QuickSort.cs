@@ -5,7 +5,7 @@ namespace GUI.Algorithms
 {
 	public class QuickSort : SortingStrategy
 	{
-		public QuickSort () : base() {}
+		public QuickSort () : base("Tri Rapide", Complexity.NLOGN) {}
 
 
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)

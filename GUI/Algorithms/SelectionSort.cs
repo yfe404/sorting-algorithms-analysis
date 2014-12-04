@@ -5,7 +5,7 @@ namespace GUI.Algorithms
 {
 	public class SelectionSort : SortingStrategy
 	{
-		public SelectionSort () : base() {}
+		public SelectionSort () : base("Tri Selection", Complexity.QUADRATIC) {}
 
 	
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)

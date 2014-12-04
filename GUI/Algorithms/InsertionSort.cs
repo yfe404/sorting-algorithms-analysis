@@ -5,7 +5,7 @@ namespace GUI.Algorithms
 {
 	public class InsertionSort : SortingStrategy
 	{
-		public InsertionSort () : base() {}
+		public InsertionSort () : base("Tri Insertion", Complexity.QUADRATIC) {}
 
 	
 		public override Probe doAlgorithm (DataSet dataset, int beginIndex, int endIndex)

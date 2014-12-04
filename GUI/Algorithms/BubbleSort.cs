@@ -5,7 +5,7 @@ namespace GUI.Algorithms
 {
 	public class BubbleSort : SortingStrategy
 	{
-		public BubbleSort () : base() {}
+		public BubbleSort () : base("Tri Bulle", Complexity.QUADRATIC) {}
 
 
 
