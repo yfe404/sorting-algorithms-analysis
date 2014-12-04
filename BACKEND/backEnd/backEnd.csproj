@@ -44,6 +44,7 @@
     <Compile Include="BubbleSortOptimized.cs" />
     <Compile Include="BubbleSort.cs" />
     <Compile Include="QuickSort.cs" />
+    <Compile Include="BubbleSortBool.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
