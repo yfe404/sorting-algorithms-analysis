@@ -22,7 +22,8 @@ namespace GUI.Views
 			datasetSizeLabel.ModifyFont (verdana);
 			Attach (datasetSizeLabel, 0, 1, 0, 1);
 
-			datasetSizeBox = new Gtk.SpinButton (0, 10000000, 1);
+			datasetSizeBox = new Gtk.SpinButton (0, 500, 1);
+			datasetSizeBox.Value = 10;
 			datasetSizeBox.ModifyFont (verdana);
 			Attach (datasetSizeBox, 0, 1, 1, 2);
 

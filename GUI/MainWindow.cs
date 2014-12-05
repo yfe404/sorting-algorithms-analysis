@@ -50,7 +50,8 @@ namespace GUI
 			}
 				
 			// Handle events
-			resultsTreeView.NodeSelection.Changed += resultsTreeViewSelectionChanged;
+			// TODO: Handle unregistered callback (cause null pointers exceptions)
+			resultsTreeView.VisibilityChanged += HandleVisibilityChanged;
 			datasetView.DatasetChanged += HandleDatasetChanged;
 
 			// Populate with initial data
@@ -58,6 +59,11 @@ namespace GUI
 			HandleDatasetChanged (dataset);
 
 			ShowAll ();
+		}
+
+		void HandleVisibilityChanged (string algorithmName, bool theoriticalVisible, bool measuredVisible)
+		{
+			// TODO
 		}
 
 		private void HandleDatasetChanged (DataSet dataset)
@@ -71,15 +77,6 @@ namespace GUI
 
 				resultsTreeView.AddResult(result);
 				plotView.PlotResult (result);
-			}
-		}
-
-		private void resultsTreeViewSelectionChanged (object sender, EventArgs e)
-		{
-			Gtk.NodeSelection selection = (Gtk.NodeSelection)sender;
-
-			if (selection.SelectedNode != null) {
-				var node = (Models.ResultsTreeNode)selection.SelectedNode;
 			}
 		}
 
