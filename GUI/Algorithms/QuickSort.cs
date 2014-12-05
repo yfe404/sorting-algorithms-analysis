@@ -54,8 +54,6 @@ namespace GUI.Algorithms
 			--call; 
 			if (call == 0) {
 				initialized = false;
-				Console.WriteLine ("Quicksort result :");
-				Console.Write (data);
 				return data.probe;
 			} else {
 				return null;

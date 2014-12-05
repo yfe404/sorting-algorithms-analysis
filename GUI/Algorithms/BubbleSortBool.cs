@@ -33,8 +33,6 @@ namespace GUI.Algorithms
 					}
 				}
 				if(echange == false)  {
-					Console.WriteLine ("BubbleSortBool result : ");
-					Console.Write (data);
 					return data.probe;
 				}
 				echange = false;
@@ -43,8 +41,6 @@ namespace GUI.Algorithms
 			--call; 
 			if (call == 0) {
 				initialized = false;
-				Console.WriteLine ("BubbleSortBool result :");
-				Console.Write (data);
 				return data.probe;
 			} else {
 				return null;

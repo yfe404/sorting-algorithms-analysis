@@ -37,8 +37,6 @@ namespace GUI.Algorithms
 				}
 				tmp = posLastSwap;
 				if(echange == false)  {
-					Console.WriteLine ("BubbleSortOptimized result : ");
-					Console.Write (data);
 					return data.probe;
 				}
 				echange = false;
@@ -47,8 +45,6 @@ namespace GUI.Algorithms
 			--call; 
 			if (call == 0) {
 				initialized = false;
-				Console.WriteLine ("Optimized Bubble Sort result :");
-				Console.Write (data);
 				return data.probe;
 			} else {
 				return null;
