@@ -25,7 +25,7 @@ namespace GUI.Algorithms
 
 			for(int i = 0; i < data_size; ++i)
 			{
-				for(int j = 0; j < data_size; ++j)
+				for(int j = 0; j < tmp-1; ++j)
 				{
 
 					if(data.compare(j, j+1) > 0) {
@@ -37,6 +37,8 @@ namespace GUI.Algorithms
 				}
 				tmp = posLastSwap;
 				if(echange == false)  {
+					--call;
+					initialized = false;
 					return data.probe;
 				}
 				echange = false;
