@@ -33,6 +33,8 @@ namespace GUI.Algorithms
 					}
 				}
 				if(echange == false)  {
+					--call;
+					initialized = false;
 					return data.probe;
 				}
 				echange = false;
