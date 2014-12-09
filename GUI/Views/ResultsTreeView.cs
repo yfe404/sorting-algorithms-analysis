@@ -52,8 +52,8 @@ namespace GUI.Views
 					result.Algorithm.Name,
 					result.Algorithm.AsymptoticComplexity.ToString (),
 					result.GetSignificantComparisons (),
-					result.GetSignificantCopies (),
-					result.GetSignificantExchanges ()
+					result.GetSignificantExchanges (),
+					result.GetSignificantCopies ()
 				)
 			);
 		}
